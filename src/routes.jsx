@@ -1,14 +1,21 @@
-import Home from './Home.jsx'
-import Shop from './Shop'
+import Home from './pages/Home.jsx'
+import Shop from './pages/Shop.jsx'
+import Layout from '../components/Layout.jsx';
 
 const routes = [
     {
       path: "/",
-      element: <Home />,
-    },
-    {
-      path: "shop",
-      element: <Shop />,
+      element: <Layout />,
+      children: [
+        {
+            path: "/",
+            element: <Home />,
+          },
+        {
+            path: "shop",
+            element: <Shop />,
+          },
+      ]
     },
   ];
 
