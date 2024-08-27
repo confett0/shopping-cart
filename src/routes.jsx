@@ -1,10 +1,10 @@
-import App from './App.jsx'
+import Home from './Home.jsx'
 import Shop from './Shop'
 
 const routes = [
     {
       path: "/",
-      element: <App />,
+      element: <Home />,
     },
     {
       path: "shop",
