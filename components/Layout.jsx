@@ -10,6 +10,7 @@ export default function Layout() {
             <h1><Link to="/">Logo</Link></h1>
             <nav>
                 <NavLink to="shop">Shop</NavLink>
+                <NavLink to="cart">Cart</NavLink>
             </nav>
         </header>
         <Outlet context={[cart, setCart]} />

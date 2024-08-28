@@ -29,6 +29,11 @@ header a {
   text-decoration: none;
 }
 
+nav {
+  display: flex;
+  gap: 1rem;
+}
+
 footer {
   background-color: #131313;
   color: #fff;
