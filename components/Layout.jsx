@@ -1,6 +1,9 @@
+import { useState } from "react";
 import { Link, NavLink, Outlet } from "react-router-dom";
 
 export default function Layout() {
+    const [cart, setCart] = useState(5);
+
     return (
     <>
         <header>
@@ -9,7 +12,7 @@ export default function Layout() {
                 <NavLink to="shop">Shop</NavLink>
             </nav>
         </header>
-        <Outlet />
+        <Outlet context={[cart, setCart]} />
         <footer>
             <p>footer content</p>
         </footer>
