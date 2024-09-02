@@ -34,6 +34,28 @@ nav {
   gap: 1rem;
 }
 
+.outlet {
+  padding: 2rem;
+  max-width: 1440px;
+}
+
+.product-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.product-card {
+  height: 25rem;
+  width: 20rem;
+  padding: 2rem 0;
+}
+
+.product-card img {
+  width: 100%;
+}
+
 footer {
   background-color: #131313;
   color: #fff;
