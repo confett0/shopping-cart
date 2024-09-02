@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useOutletContext } from "react-router-dom";
 
 export default function ProductPage() {
   const { productId } = useParams();
-  const [productData, setProductData] = useState(null);
+  const [productData, setProductData] = useState({});
+  const [cart, setCart] = useOutletContext();
 
   useEffect(() => {
     fetch("/src/products.json")
@@ -13,7 +14,32 @@ export default function ProductPage() {
       );
   }, [productId]);
 
-  console.log(productData)
+  console.log(cart);
 
-  return <h1>Product Page</h1>;
+  return (
+    <div className="product-page">
+      <img src={productData.image} />
+      <div className="product-info">
+        <h2>{productData.name}</h2>
+        <p>{productData.description}</p>
+        <p>{productData.price}</p>
+        <button
+          onClick={() =>
+            setCart((prevCart) => [
+              ...prevCart,
+              {
+                name: productData.name,
+                image: productData.image,
+                id: productData.id,
+                price: productData.price,
+                quantity: 1,
+              },
+            ])
+          }
+        >
+          Add to cart
+        </button>
+      </div>
+    </div>
+  );
 }

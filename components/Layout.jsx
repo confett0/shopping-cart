@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, NavLink, Outlet } from "react-router-dom";
 
 export default function Layout() {
-  const [cart, setCart] = useState(5);
+  const [cart, setCart] = useState([]);
 
   return (
     <>

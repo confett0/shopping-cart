@@ -56,6 +56,15 @@ nav {
   width: 100%;
 }
 
+.product-page {
+  display: flex;
+}
+
+
+.product-page img {
+  width: 30rem;
+}
+
 footer {
   background-color: #131313;
   color: #fff;
