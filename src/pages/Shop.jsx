@@ -14,6 +14,7 @@ export default function Shop() {
   const productElements = data.map((item) => (
     <ProductCard
       key={item.id}
+      id={item.id}
       image={item.image}
       name={item.name}
       price={item.price}
