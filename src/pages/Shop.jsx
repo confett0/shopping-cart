@@ -2,15 +2,15 @@ import { useState, useEffect } from "react";
 import ProductCard from "../../components/ProductCard";
 
 export default function Shop() {
-  const [data, setData] = useState([]);
+  const [products, setProducts] = useState([]);
 
   useEffect(() => {
     fetch("src/products.json")
       .then((res) => res.json())
-      .then((data) => setData(data.products));
+      .then((data) => setProducts(data.products));
   }, []);
 
-  const productElements = data.map((item) => (
+  const productElements = products.map((item) => (
     <ProductCard
       key={item.id}
       id={item.id}
