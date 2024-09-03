@@ -1,10 +1,9 @@
 import { useState, useEffect } from "react";
-import { useParams, useOutletContext } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
-export default function ProductPage() {
+export default function ProductPage({ cart, addToCart }) {
   const { productId } = useParams();
   const [productData, setProductData] = useState({});
-  const [cart, setCart] = useOutletContext();
 
   useEffect(() => {
     fetch("/src/products.json")
@@ -23,22 +22,7 @@ export default function ProductPage() {
         <h2>{productData.name}</h2>
         <p>{productData.description}</p>
         <p>{productData.price}</p>
-        <button
-          onClick={() =>
-            setCart((prevCart) => [
-              ...prevCart,
-              {
-                name: productData.name,
-                image: productData.image,
-                id: productData.id,
-                price: productData.price,
-                quantity: 1,
-              },
-            ])
-          }
-        >
-          Add to cart
-        </button>
+        <button onClick={() => addToCart(productData)}>Add to cart</button>
       </div>
     </div>
   );
