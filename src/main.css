@@ -65,6 +65,10 @@ nav {
   width: 30rem;
 }
 
+.cart-item img{
+  width: 5rem;
+}
+
 footer {
   background-color: #131313;
   color: #fff;
