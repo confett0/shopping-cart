@@ -1,7 +1,12 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
-export default function ProductPage({ cart, addToCart, itemQuantity, setItemQuantity }) {
+export default function ProductPage({
+  cart,
+  addToCart,
+  itemQuantity,
+  setItemQuantity,
+}) {
   const { productId } = useParams();
   const [productData, setProductData] = useState({});
 
@@ -22,6 +27,11 @@ export default function ProductPage({ cart, addToCart, itemQuantity, setItemQuan
         <h2>{productData.name}</h2>
         <p>{productData.description}</p>
         <p>{productData.price}</p>
+        <input
+          name="item-quantity"
+          value={itemQuantity}
+          onChange={(e) => setItemQuantity(+e.target.value)}
+        />
         <button onClick={() => addToCart(productData)}>Add to cart</button>
       </div>
     </div>
