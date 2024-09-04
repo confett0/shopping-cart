@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import ProductCard from "../../components/ProductCard";
 
-export default function Shop({cart}) {
+export default function Shop({cart, addToCart}) {
   const [products, setProducts] = useState([]);
   console.log(cart)
 
@@ -14,10 +14,8 @@ export default function Shop({cart}) {
   const productElements = products.map((item) => (
     <ProductCard
       key={item.id}
-      id={item.id}
-      image={item.image}
-      name={item.name}
-      price={item.price}
+      addToCart={addToCart}
+      item={item}
     />
   ));
 
