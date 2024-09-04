@@ -8,6 +8,7 @@ import ProductPage from "./pages/ProductPage";
 
 export default function App() {
   const [cart, setCart] = useState([]);
+  const [itemQuantity, setItemQuantity] = useState(1);
 
   const addToCart = (newItem) => {
     setCart((prevCart) => {
@@ -17,7 +18,7 @@ export default function App() {
         // if it is update its quantity
         return prevCart.map((item) =>
           item.id === newItem.id
-            ? { ...item, quantity: item.quantity + 1 }
+            ? { ...item, quantity: item.quantity + itemQuantity }
             : item
         );
       } else {
@@ -29,7 +30,7 @@ export default function App() {
             image: newItem.image,
             id: newItem.id,
             price: newItem.price,
-            quantity: 1,
+            quantity: itemQuantity,
           },
         ];
       }
@@ -44,7 +45,14 @@ export default function App() {
           <Route path="shop" element={<Shop cart={cart} />} />
           <Route
             path="shop/:productId"
-            element={<ProductPage cart={cart} addToCart={addToCart} />}
+            element={
+              <ProductPage
+                cart={cart}
+                addToCart={addToCart}
+                itemQuantity={itemQuantity}
+                setItemQuantity={setItemQuantity}
+              />
+            }
           />
           <Route path="cart" element={<Cart />} />
         </Route>
