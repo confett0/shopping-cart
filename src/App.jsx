@@ -9,6 +9,7 @@ import ProductPage from "./pages/ProductPage";
 export default function App() {
   const [cart, setCart] = useState([]);
   const [itemQuantity, setItemQuantity] = useState(1);
+  const totalItemsInCart = cart.reduce((a,b) => a + b.quantity, 0);
 
   const addToCart = (newItem) => {
     setCart((prevCart) => {
@@ -40,7 +41,7 @@ export default function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Layout />}>
+        <Route path="/" element={<Layout totalItems={totalItemsInCart} />}>
           <Route index element={<Home />} />
           <Route path="shop" element={<Shop cart={cart} addToCart={addToCart} />} />
           <Route

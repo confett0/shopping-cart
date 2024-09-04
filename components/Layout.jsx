@@ -1,6 +1,6 @@
 import { Link, NavLink, Outlet } from "react-router-dom";
 
-export default function Layout() {
+export default function Layout({totalItems}) {
 
   return (
     <>
@@ -10,7 +10,7 @@ export default function Layout() {
         </h1>
         <nav>
           <NavLink to="shop">Shop</NavLink>
-          <NavLink to="cart">Cart</NavLink>
+          <NavLink to="cart">Cart <span className="total-items">{totalItems ? totalItems : ""}</span></NavLink>
         </nav>
       </header>
       <div className="outlet">
