@@ -60,9 +60,22 @@ nav {
   display: flex;
 }
 
-
 .product-page img {
   width: 30rem;
+}
+
+.quantity-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.item-quantity {
+  border: 1px solid;
+  padding: 0.8rem;
+}
+
+.quantity-button {
+  padding: 0.8rem;
 }
 
 .cart-item img{

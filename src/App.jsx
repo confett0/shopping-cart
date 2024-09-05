@@ -44,7 +44,7 @@ export default function App() {
     );
 
   const incrementItemQuantity = () =>
-    setItemQuantity(prevCount => prevCount + 1)
+    setItemQuantity((prevCount) => prevCount + 1);
 
   const decrementItemQuantity = () =>
     setItemQuantity((prevCount) => {

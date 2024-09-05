@@ -19,8 +19,6 @@ export default function ProductPage({
       );
   }, [productId]);
 
-  console.log(cart);
-
   return (
     <div className="product-page">
       <img src={productData.image} />
@@ -28,19 +26,21 @@ export default function ProductPage({
         <h2>{productData.name}</h2>
         <p>{productData.description}</p>
         <p>{productData.price}</p>
-        <button
-          className="decrement-quantity"
-          onClick={decrementQuantity}
-        >
-          -
-        </button>
-        <div className="item-quantity">{itemQuantity}</div>
-        <button
-          className="increment-quantity"
-          onClick={incrementQuantity}
-        >
-          +
-        </button>
+        <div className="quantity-wrap">
+          <button
+            className="quantity-button"
+            onClick={decrementQuantity}
+          >
+            -
+          </button>
+          <div className="item-quantity">{itemQuantity}</div>
+          <button
+            className="quantity-button"
+            onClick={incrementQuantity}
+          >
+            +
+          </button>
+        </div>
         <button onClick={() => addToCart(productData)}>Add to cart</button>
       </div>
     </div>
