@@ -43,6 +43,15 @@ export default function App() {
       prevCart.filter((item) => item.id !== itemToDelete.id)
     );
 
+  const incrementItemQuantity = () =>
+    setItemQuantity(prevCount => prevCount + 1)
+
+  const decrementItemQuantity = () =>
+    setItemQuantity((prevCount) => {
+      if (prevCount <= 1) return prevCount;
+      return prevCount - 1;
+    });
+
   return (
     <BrowserRouter>
       <Routes>
@@ -60,10 +69,15 @@ export default function App() {
                 addToCart={addToCart}
                 itemQuantity={itemQuantity}
                 setItemQuantity={setItemQuantity}
+                incrementQuantity={incrementItemQuantity}
+                decrementQuantity={decrementItemQuantity}
               />
             }
           />
-          <Route path="cart" element={<Cart cart={cart} deleteItem={deleteFromCart} />} />
+          <Route
+            path="cart"
+            element={<Cart cart={cart} deleteItem={deleteFromCart} />}
+          />
         </Route>
       </Routes>
     </BrowserRouter>
