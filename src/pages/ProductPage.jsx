@@ -5,8 +5,9 @@ export default function ProductPage({
   cart,
   addToCart,
   itemQuantity,
+  setItemQuantity,
   incrementQuantity,
-  decrementQuantity
+  decrementQuantity,
 }) {
   const { productId } = useParams();
   const [productData, setProductData] = useState({});
@@ -27,17 +28,16 @@ export default function ProductPage({
         <p>{productData.description}</p>
         <p>{productData.price}</p>
         <div className="quantity-wrap">
-          <button
-            className="quantity-button"
-            onClick={decrementQuantity}
-          >
+          <button className="quantity-button" onClick={decrementQuantity}>
             -
           </button>
-          <div className="item-quantity">{itemQuantity}</div>
-          <button
-            className="quantity-button"
-            onClick={incrementQuantity}
-          >
+          <input
+            className="item-quantity"
+            name="item-quantity"
+            value={itemQuantity}
+            onChange={(e) => setItemQuantity(+e.target.value)}
+          />
+          <button className="quantity-button" onClick={incrementQuantity}>
             +
           </button>
         </div>
