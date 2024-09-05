@@ -36,6 +36,7 @@ export default function App() {
         ];
       }
     });
+    setItemQuantity(1); // reset itemQuantity state
   };
 
   const deleteFromCart = (itemToDelete) =>

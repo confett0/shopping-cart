@@ -1,5 +1,5 @@
 export default function Cart({ cart, deleteItem }) {
-  const orderTotal = cart.reduce((a, b) => a + b.price, 0);
+  const orderTotal = cart.reduce((a, b) => a + (b.price * b.quantity), 0);
 
   const itemElements = cart.map((item) => (
     <div key={item.id} className="cart-item">
