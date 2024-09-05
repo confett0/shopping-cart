@@ -1,4 +1,4 @@
-export default function Cart({ cart }) {
+export default function Cart({ cart, deleteItem }) {
   const orderTotal = cart.reduce((a, b) => a + b.price, 0);
 
   const itemElements = cart.map((item) => (
@@ -7,6 +7,7 @@ export default function Cart({ cart }) {
       <h4>{item.name}</h4>
       <p>{item.quantity}</p>
       <p>{item.price}</p>
+      <button onClick={() => deleteItem(item)}>Delete</button>
     </div>
   ));
 
