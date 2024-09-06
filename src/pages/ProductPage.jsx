@@ -32,6 +32,7 @@ export default function ProductPage({
             -
           </button>
           <input
+            type="number"
             className="item-quantity"
             name="item-quantity"
             value={itemQuantity}
