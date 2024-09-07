@@ -7,7 +7,6 @@
 #root {
   width: 100vw;
   margin: 0 auto;
-  text-align: center;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -57,7 +56,9 @@ nav {
 }
 
 .product-page {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
 }
 
 .product-page img {

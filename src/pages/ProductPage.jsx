@@ -20,6 +20,8 @@ export default function ProductPage({
       );
   }, [productId]);
 
+  console.log(productData)
+
   return (
     <div className="product-page">
       <img src={productData.image} />
@@ -37,7 +39,8 @@ export default function ProductPage({
             name="item-quantity"
             value={itemQuantity}
             onChange={(e) => {
-              if (e.target.value === "") { // avoid displaying 0 when erasing value inside the input
+              if (e.target.value === "") {
+                // avoid displaying 0 when erasing value inside the input
                 setItemQuantity("");
               } else {
                 setItemQuantity(+e.target.value);
@@ -49,6 +52,16 @@ export default function ProductPage({
           </button>
         </div>
         <button onClick={() => addToCart(productData)}>Add to cart</button>
+      </div>
+      <div>
+        <h3>Features</h3>
+        <p>{productData.features}</p>
+      </div>
+      <div>
+        <h3>Included items</h3>
+        {productData.includedItems.map(item => <ul key={item.item}>
+          <li>{item.item} x {item.quantity}</li>
+        </ul>)}
       </div>
     </div>
   );
