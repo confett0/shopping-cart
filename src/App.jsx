@@ -12,6 +12,7 @@ export default function App() {
   const totalItemsInCart = cart.reduce((a, b) => a + b.quantity, 0);
 
   const addToCart = (newItem) => {
+    if (itemQuantity === "") return; // avoid add item with undefined quantity to cart
     setCart((prevCart) => {
       // check if item is already added to cart
       const isAlreadyInCart = prevCart.find((item) => item.id === newItem.id);

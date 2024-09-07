@@ -36,7 +36,13 @@ export default function ProductPage({
             className="item-quantity"
             name="item-quantity"
             value={itemQuantity}
-            onChange={(e) => setItemQuantity(+e.target.value)}
+            onChange={(e) => {
+              if (e.target.value === "") { // avoid displaying 0 when erasing value inside the input
+                setItemQuantity("");
+              } else {
+                setItemQuantity(+e.target.value);
+              }
+            }}
           />
           <button className="quantity-button" onClick={incrementQuantity}>
             +
