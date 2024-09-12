@@ -17,13 +17,11 @@ body {
   justify-content: space-between
 }
 
+/* Layout */
+
 header {
   background-color: #000;
   color: #fff;
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-transform: uppercase;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -31,19 +29,56 @@ header {
   padding: 0 9rem;
 }
 
-header a {
-  color: #fff;
-  text-decoration: none;
-}
-
 nav {
   display: flex;
   gap: 2rem;
 }
 
+footer {
+  background-color: #131313;
+}
+
+.footer-wrap {
+  color: #fff;
+  font-size: 0.9rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem 5rem;
+  padding: 3rem 9rem;
+  max-width: 1440px;
+}
+
+header a, footer a {
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+footer p {
+  line-height: 1.5rem;
+  opacity: 0.5;
+}
+
+footer nav {
+  justify-self: end;
+}
+
+.social-icons {
+  align-self: baseline;
+  justify-self: end;
+  display: flex;
+  gap: 1rem;
+}
+
+/* Content area */
+
 .outlet {
   padding: 2rem;
   max-width: 1440px;
+  margin-bottom: 4rem;
 }
 
 .product-wrap {
@@ -100,13 +135,4 @@ input[type=number]::-webkit-outer-spin-button {
 
 .cart-item img{
   width: 5rem;
-}
-
-footer {
-  background-color: #131313;
-  color: #fff;
-  display: flex;
-  align-items: center;
-  height: 4rem;
-  padding: 2rem 3rem;
 }
