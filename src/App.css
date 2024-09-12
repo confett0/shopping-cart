@@ -67,18 +67,30 @@ footer nav {
 }
 
 .social-icons {
-  align-self: baseline;
+  align-self: end;
   justify-self: end;
   display: flex;
   gap: 1rem;
+  align-items: center;
 }
 
 /* Content area */
 
 .outlet {
-  padding: 2rem;
   max-width: 1440px;
   margin-bottom: 4rem;
+}
+
+.outlet > * {
+  padding: 2rem 9rem;
+}
+
+/* Home page */
+
+.hero-area {
+  background: url("./src/assets/home/desktop/image-hero.jpg") no-repeat center center;
+  background-position: cover;
+  height: 45rem;
 }
 
 .product-wrap {
