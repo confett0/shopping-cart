@@ -8,6 +8,21 @@ body {
   font-family: 'Manrope Variable', sans-serif;
 }
 
+button {
+  background: #D87D4A;
+  border: none;
+  color: #FFF;
+  font-family: 'Manrope Variable', sans-serif;;
+  font-size: 0.8125rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0.0625rem;
+  text-transform: uppercase;
+  width: 10rem;
+  height: 3rem;
+}
+
 #root {
   width: 100vw;
   margin: 0 auto;
@@ -48,7 +63,8 @@ footer {
   max-width: 1440px;
 }
 
-header a, footer a {
+header a,
+footer a {
   color: #fff;
   font-size: 0.7rem;
   font-weight: 700;
@@ -81,7 +97,7 @@ footer nav {
   margin-bottom: 4rem;
 }
 
-.outlet > * {
+.outlet>* {
   padding: 2rem 9rem;
 }
 
@@ -145,6 +161,6 @@ input[type=number]::-webkit-outer-spin-button {
   padding: 0.8rem;
 }
 
-.cart-item img{
+.cart-item img {
   width: 5rem;
 }
