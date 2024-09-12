@@ -6,7 +6,7 @@ export default function Shop({cart, addToCart}) {
   console.log(cart)
 
   useEffect(() => {
-    fetch("src/products.json")
+    fetch("/products.json")
       .then((res) => res.json())
       .then((data) => setProducts(data.products));
   }, []);

@@ -10,10 +10,10 @@ export default function ProductPage({
   decrementQuantity,
 }) {
   const { productId } = useParams();
-  const [productData, setProductData] = useState({});
+  const [productData, setProductData] = useState(null);
 
   useEffect(() => {
-    fetch("/src/products.json")
+    fetch("/products.json")
       .then((res) => res.json())
       .then((data) =>
         setProductData(data.products.find((product) => product.id == productId))
@@ -21,6 +21,14 @@ export default function ProductPage({
   }, [productId]);
 
   console.log(productData)
+
+  if (!productData) {
+    return <div>Loading...</div>;
+  }
+
+  const includedItemElements = productData.includedItems.map(item => <ul key={item.item}>
+    <li>{item.item} x {item.quantity}</li>
+  </ul>);
 
   return (
     <div className="product-page">
@@ -59,9 +67,7 @@ export default function ProductPage({
       </div>
       <div>
         <h3>Included items</h3>
-        {productData.includedItems.map(item => <ul key={item.item}>
-          <li>{item.item} x {item.quantity}</li>
-        </ul>)}
+        {includedItemElements}
       </div>
     </div>
   );
