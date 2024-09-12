@@ -4,6 +4,10 @@
   padding: 0;
 }
 
+body {
+  font-family: 'Manrope Variable', sans-serif;
+}
+
 #root {
   width: 100vw;
   margin: 0 auto;
