@@ -5,7 +5,7 @@ export default function Layout({ totalItems }) {
     <>
       <header>
         <Link to="/">
-          <img src="src/assets/shared/desktop/logo.svg" />
+          <img src="../src/assets/shared/desktop/logo.svg" />
         </Link>
         <nav>
           <NavLink to="/">Home</NavLink>
@@ -15,7 +15,7 @@ export default function Layout({ totalItems }) {
           <NavLink to="">Earphones</NavLink>
         </nav>
         <Link to="cart">
-          <img src="src/assets/shared/desktop/icon-cart.svg" />{" "}
+          <img src="../src/assets/shared/desktop/icon-cart.svg" />{" "}
           <span className="total-items">{totalItems ? totalItems : ""}</span>
         </Link>
       </header>
@@ -24,7 +24,7 @@ export default function Layout({ totalItems }) {
       </div>
       <footer>
         <div className="footer-wrap">
-          <img src="src/assets/shared/desktop/logo.svg" />
+          <img src="../src/assets/shared/desktop/logo.svg" />
           <nav>
           <NavLink to="/">Home</NavLink>
           <NavLink to="">Headphones</NavLink>
@@ -38,9 +38,9 @@ export default function Layout({ totalItems }) {
             demo facility - we’re open 7 days a week.
           </p>
           <div className="social-icons">
-            <img src="src/assets/shared/desktop/icon-facebook.svg" />
-            <img src="src/assets/shared/desktop/icon-twitter.svg" />
-            <img src="src/assets/shared/desktop/icon-instagram.svg" />
+            <img src="../src/assets/shared/desktop/icon-facebook.svg" />
+            <img src="../src/assets/shared/desktop/icon-twitter.svg" />
+            <img src="../src/assets/shared/desktop/icon-instagram.svg" />
           </div>
           <p>Copyright 2021. All Rights Reserved</p>
         </div>
