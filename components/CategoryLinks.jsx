@@ -25,7 +25,7 @@ function CategoryLink({ imgUrl, categoryName, link }) {
       <img src={imgUrl} />
       <div className="category-name">
         <h4>{categoryName}</h4>
-        <button>Shop</button>
+        <button className="minimal">Shop</button>
       </div>
     </div>
   );

@@ -42,9 +42,6 @@ p {
 }
 
 button {
-  background: #D87D4A;
-  border: none;
-  color: #FFF;
   cursor: pointer;
   font-family: 'Manrope Variable', sans-serif;
   font-size: 0.8125rem;
@@ -56,6 +53,21 @@ button {
   width: 10rem;
   height: 3rem;
   margin: 2rem 0;
+}
+
+button.orange {
+  background: #D87D4A;
+  border: none;
+  color: #FFF;
+}
+
+button.clear {
+  color: #000; /* check color */
+}
+
+button.minimal {
+  border: none;
+  color: rgba(0, 0, 0, 0.5);
 }
 
 #root {

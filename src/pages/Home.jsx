@@ -11,7 +11,7 @@ export default function Home() {
               Experience natural, lifelike audio and exceptional build quality made
               for the passionate music enthusiast.
             </p>
-            <button>See product</button>
+            <button className="orange">See product</button>
         </div>
       </section>
       <section>
