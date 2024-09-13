@@ -1,3 +1,5 @@
+import CategoryLinks from "../../components/CategoryLinks";
+
 export default function Home() {
   return (
     <>
@@ -11,6 +13,9 @@ export default function Home() {
             </p>
             <button>See product</button>
         </div>
+      </section>
+      <section>
+        <CategoryLinks />
       </section>
     </>
   );
