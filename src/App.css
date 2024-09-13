@@ -8,11 +8,38 @@ body {
   font-family: 'Manrope Variable', sans-serif;
 }
 
+/* Typography */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+h1 {
+  color: #FFF;
+  font-size: 3.5rem;
+  line-height: 3.625rem;
+  letter-spacing: 0.125rem;
+  margin-bottom: 2rem;
+}
+
+p {
+  font-size: 0.9375rem;
+  line-height: 1.5625rem;
+  margin-bottom: 1rem;
+}
+
 button {
   background: #D87D4A;
   border: none;
   color: #FFF;
-  font-family: 'Manrope Variable', sans-serif;;
+  cursor: pointer;
+  font-family: 'Manrope Variable', sans-serif;
   font-size: 0.8125rem;
   font-style: normal;
   font-weight: 700;
@@ -35,7 +62,8 @@ button {
 /* Layout */
 
 header {
-  background-color: #000;
+  background-color: #0E0E0E;
+  ;
   color: #fff;
   display: flex;
   align-items: center;
@@ -104,10 +132,16 @@ footer nav {
 /* Home page */
 
 .hero-area {
-  background: url("./src/assets/home/desktop/image-hero.jpg") no-repeat center center;
-  background-position: cover;
-  height: 45rem;
+  background: radial-gradient(transparent, #0E0E0E), url("./src/assets/home/desktop/image-hero.jpg") center/cover;
+  color: #fff;
+  height: 39rem;
 }
+
+.home-product-card {
+  width: 25rem;
+}
+
+/* Shop page */
 
 .product-wrap {
   display: flex;
@@ -117,7 +151,6 @@ footer nav {
 }
 
 .product-card {
-  height: 25rem;
   width: 20rem;
   padding: 2rem 0;
 }
