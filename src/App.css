@@ -28,6 +28,13 @@ h1 {
   margin-bottom: 2rem;
 }
 
+h6 {
+  font-size: 0.875rem;
+  letter-spacing: 0.625rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
 p {
   font-size: 0.9375rem;
   line-height: 1.5625rem;
@@ -48,6 +55,7 @@ button {
   text-transform: uppercase;
   width: 10rem;
   height: 3rem;
+  margin: 2rem 0;
 }
 
 #root {
@@ -63,13 +71,17 @@ button {
 
 header {
   background-color: #0E0E0E;
-  ;
   color: #fff;
+  padding: 0 9rem;
+}
+
+.header-wrap {
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 6rem;
-  padding: 0 9rem;
 }
 
 nav {
@@ -132,13 +144,20 @@ footer nav {
 /* Home page */
 
 .hero-area {
-  background: radial-gradient(transparent, #0E0E0E), url("./src/assets/home/desktop/image-hero.jpg") center/cover;
+  background: radial-gradient(transparent, #0E0E0E 75%), url("./src/assets/home/desktop/image-hero.jpg") center/cover;
   color: #fff;
+  display: flex;
+  align-items: center;
+
   height: 39rem;
 }
 
 .home-product-card {
   width: 25rem;
+}
+
+.hero-area h6 {
+  opacity: 0.5;
 }
 
 /* Shop page */
