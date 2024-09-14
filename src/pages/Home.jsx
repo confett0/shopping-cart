@@ -1,4 +1,4 @@
-import CategoryLinks from "../../components/CategoryLinks";
+import CategoryLinks from "../components/CategoryLinks";
 
 export default function Home() {
   return (

@@ -1,7 +1,7 @@
 import "./App.css"
 import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Layout from "../components/Layout";
+import Layout from "./components/Layout"
 import Home from "./pages/Home";
 import Shop from "./pages/Shop";
 import Cart from "./pages/Cart";
