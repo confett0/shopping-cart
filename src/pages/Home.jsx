@@ -17,7 +17,7 @@ export default function Home() {
       <section>
         <CategoryLinks />
       </section>
-      <section className="orange-area">
+      <section className="orange-area area">
       <img src="./src/assets/home/desktop/image-speaker-zx9.png" />
         <div className="home-product-card">
           <h1>ZX9 SPEAKER</h1>
@@ -28,6 +28,18 @@ export default function Home() {
           <button className="black">See product</button>
         </div>
       </section>
+      <section className="grey-area area">
+        <div className="home-product-card">
+          <h4>ZX7 SPEAKER</h4>
+          <button className="clear">See product</button>
+        </div>
+      </section>
+      {/*<section className="black-area">
+        <div className="home-product-card">
+          <h4>YX1 EARPHONES</h4>
+          <button className="clear">See product</button>
+        </div>
+      </section>*/}
     </>
   );
 }

@@ -12,6 +12,12 @@ body {
   font-family: 'Manrope Variable', sans-serif;
 }
 
+#root {
+  width: 100vw;
+  margin: 0 auto;
+  min-height: 100vh;
+}
+
 /* Typography */
 
 h1,
@@ -29,6 +35,12 @@ h1 {
   line-height: 3.625rem;
   letter-spacing: 0.125rem;
   margin-bottom: 2rem;
+}
+
+h4 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: 0.125rem;
 }
 
 h6 {
@@ -95,21 +107,13 @@ button.minimal span {
   margin-left: 0.5rem;
 }
 
-#root {
-  width: 100vw;
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between
-}
-
 /* Layout */
 
 header {
   background-color: #0E0E0E;
   color: #fff;
   padding: 0 9rem;
+  width: 100vw;
 }
 
 .header-wrap {
@@ -170,12 +174,15 @@ footer nav {
 /* Content area */
 
 .outlet {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
   max-width: 1440px;
   margin-bottom: 4rem;
 }
 
 section:not(.hero-area) {
-  margin: auto;
   max-width: 70rem;
 }
 
@@ -188,6 +195,7 @@ section:not(.hero-area) {
   align-items: center;
   height: 39rem;
   padding: 0 9rem;
+  width: 100vw;
 }
 
 .home-product-card {
@@ -229,20 +237,36 @@ section:not(.hero-area) {
   align-items: center;
 }
 
+.area {
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  padding: 0 9rem;
+  width: 70rem;
+}
+
 .orange-area {
   background: var(--orange);
-  border-radius: 0.5rem;
   color: #FFF;
   display: flex;
   gap: 7rem;
-  padding: 4rem 9rem 0;
+  height: 35rem;
   overflow: hidden;
 }
 
 .orange-area img {
-  margin-bottom: -1rem;
+  margin-bottom: -7rem;
   width: 25rem;
 }
+
+.grey-area {
+  background: url("./src/assets/home/desktop/image-speaker-zx7.jpg");
+  height: 20rem;
+}
+
+/*.black-area {
+  background: url("./src/assets/home/desktop/image-earphones-yx1.jpg");
+} */
 
 /* Shop page */
 
