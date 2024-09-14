@@ -25,7 +25,6 @@ h6 {
 }
 
 h1 {
-  color: #FFF;
   font-size: 3.5rem;
   line-height: 3.625rem;
   letter-spacing: 0.125rem;
@@ -68,6 +67,12 @@ button.orange {
   background: var(--orange);
   border: none;
   color: #FFF;
+}
+
+button.black {
+  background: #000;
+  border: none;
+  color: #fff;
 }
 
 button.clear {
@@ -169,8 +174,9 @@ footer nav {
   margin-bottom: 4rem;
 }
 
-.outlet>* {
-  padding: 2rem 9rem;
+section:not(.hero-area) {
+  margin: auto;
+  max-width: 70rem;
 }
 
 /* Home page */
@@ -181,6 +187,7 @@ footer nav {
   display: flex;
   align-items: center;
   height: 39rem;
+  padding: 0 9rem;
 }
 
 .home-product-card {
@@ -220,6 +227,21 @@ footer nav {
   width: 22rem;
   justify-content: flex-end;
   align-items: center;
+}
+
+.orange-area {
+  background: var(--orange);
+  border-radius: 0.5rem;
+  color: #FFF;
+  display: flex;
+  gap: 7rem;
+  padding: 4rem 9rem 0;
+  overflow: hidden;
+}
+
+.orange-area img {
+  margin-bottom: -1rem;
+  width: 25rem;
 }
 
 /* Shop page */
