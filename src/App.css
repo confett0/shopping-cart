@@ -1,3 +1,7 @@
+:root {
+  --orange: #D87D4A;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -29,16 +33,21 @@ h1 {
 }
 
 h6 {
-  font-size: 0.875rem;
-  letter-spacing: 0.625rem;
-  margin-bottom: 1rem;
-  text-transform: uppercase;
+  font-size: 1.125rem;
+  letter-spacing: 0.08038rem;
 }
 
 p {
   font-size: 0.9375rem;
   line-height: 1.5625rem;
   margin-bottom: 1rem;
+}
+
+.overline {
+  font-size: 0.875rem;
+  letter-spacing: 0.625rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
 }
 
 button {
@@ -52,22 +61,33 @@ button {
   text-transform: uppercase;
   width: 10rem;
   height: 3rem;
-  margin: 2rem 0;
+  margin: 1rem 0;
 }
 
 button.orange {
-  background: #D87D4A;
+  background: var(--orange);
   border: none;
   color: #FFF;
 }
 
 button.clear {
-  color: #000; /* check color */
+  color: #000;
+  /* check color */
 }
 
 button.minimal {
   border: none;
   color: rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+
+button.minimal span {
+  color: var(--orange);
+  font-size: 1.3rem;
+  font-weight: 400;
+  position: absolute;
+  bottom: 11px;
+  margin-left: 0.5rem;
 }
 
 #root {

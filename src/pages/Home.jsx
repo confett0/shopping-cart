@@ -5,7 +5,7 @@ export default function Home() {
     <>
       <section className="hero-area">
           <div className="home-product-card">
-            <h6>New Product</h6>
+            <p className="overline">New Product</p>
             <h1>XX99 Mark II Headphones</h1>
             <p>
               Experience natural, lifelike audio and exceptional build quality made
