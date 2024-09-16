@@ -34,12 +34,15 @@ export default function Home() {
           <button className="clear">See product</button>
         </div>
       </section>
-      {/*<section className="black-area">
-        <div className="home-product-card">
-          <h4>YX1 EARPHONES</h4>
-          <button className="clear">See product</button>
+      <section className="black-area area">
+        <img src="./src/assets/home/desktop/image-earphones-yx1.jpg" />
+        <div className="card-wrap">
+          <div className="home-product-card">
+            <h4>YX1 EARPHONES</h4>
+            <button className="clear">See product</button>
+          </div>
         </div>
-      </section>*/}
+      </section>
     </>
   );
 }

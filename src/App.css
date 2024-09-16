@@ -39,7 +39,6 @@ h1 {
 
 h4 {
   font-size: 1.75rem;
-  font-weight: 700;
   letter-spacing: 0.125rem;
 }
 
@@ -241,8 +240,7 @@ section:not(.hero-area) {
   border-radius: 0.5rem;
   display: flex;
   align-items: center;
-  padding: 0 9rem;
-  width: 70rem;
+  width: 100%;
 }
 
 .orange-area {
@@ -252,6 +250,7 @@ section:not(.hero-area) {
   gap: 7rem;
   height: 35rem;
   overflow: hidden;
+  padding: 0 9rem;
 }
 
 .orange-area img {
@@ -262,11 +261,27 @@ section:not(.hero-area) {
 .grey-area {
   background: url("./src/assets/home/desktop/image-speaker-zx7.jpg");
   height: 20rem;
+  padding: 0 9rem;
 }
 
-/*.black-area {
-  background: url("./src/assets/home/desktop/image-earphones-yx1.jpg");
-} */
+.black-area {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: space-between;
+}
+
+.black-area>* {
+  border-radius: 0.5rem;
+}
+
+.black-area .card-wrap {
+  background: #F1F1F1;
+  width: 34rem;
+  height: 20rem;
+  display: flex;
+  align-items: center;
+  padding-left: 6rem;
+}
 
 /* Shop page */
 
