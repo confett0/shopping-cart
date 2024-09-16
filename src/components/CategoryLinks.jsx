@@ -21,12 +21,12 @@ export default function CategoryLinks() {
 
 function CategoryLink({ imgUrl, categoryName, link }) {
   return (
-    <div className="category-link">
+    <section className="category-link">
       <img src={imgUrl} />
       <div className="category-name">
         <h6>{categoryName}</h6>
         <button className="minimal">Shop <span>&gt;</span></button>
       </div>
-    </div>
+    </section>
   );
 }

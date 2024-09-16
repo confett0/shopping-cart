@@ -1,4 +1,5 @@
 import CategoryLinks from "../components/CategoryLinks";
+import BeforeFooterArea from "../components/BeforeFooterArea";
 
 export default function Home() {
   return (
@@ -14,9 +15,7 @@ export default function Home() {
           <button className="orange">See product</button>
         </div>
       </section>
-      <section>
         <CategoryLinks />
-      </section>
       <section className="orange-area area">
       <img src="./src/assets/home/desktop/image-speaker-zx9.png" />
         <div className="home-product-card">
@@ -43,6 +42,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <BeforeFooterArea />
     </>
   );
 }
