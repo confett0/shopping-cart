@@ -1,5 +1,6 @@
 :root {
   --orange: #D87D4A;
+  --light-orange: #FBAF85;
 }
 
 * {
@@ -91,15 +92,28 @@ button.orange {
   color: #FFF;
 }
 
+button.orange:hover {
+  background: var(--light-orange);
+}
+
 button.black {
   background: #000;
   border: none;
   color: #fff;
 }
 
+button.black:hover {
+  background: #4C4C4C;
+}
+
 button.clear {
   color: #000;
-  /* check color */
+}
+
+button.clear:hover {
+  background: #000;
+  border: none;
+  color: #fff;
 }
 
 button.minimal {
@@ -115,6 +129,10 @@ button.minimal span {
   position: absolute;
   bottom: 11px;
   margin-left: 0.5rem;
+}
+
+button.minimal:hover {
+  color: var(--orange);
 }
 
 /* Layout */
