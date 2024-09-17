@@ -73,7 +73,7 @@ export default function App() {
             element={<CategoryPage category="earphones" cart={cart} addToCart={addToCart} />}
           />
           <Route
-            path="shop/:productId"
+            path="shop/:productSlug"
             element={
               <ProductPage
                 cart={cart}

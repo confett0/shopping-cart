@@ -9,16 +9,16 @@ export default function ProductPage({
   incrementQuantity,
   decrementQuantity,
 }) {
-  const { productId } = useParams();
+  const { productSlug } = useParams();
   const [productData, setProductData] = useState(null);
 
   useEffect(() => {
     fetch("/products.json")
       .then((res) => res.json())
       .then((data) =>
-        setProductData(data.products.find((product) => product.id == productId))
+        setProductData(data.products.find((product) => product.slug == productSlug))
       );
-  }, [productId]);
+  }, [productSlug]);
 
   console.log(productData)
 

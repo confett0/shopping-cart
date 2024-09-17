@@ -9,7 +9,9 @@ export default function CategoryPage({ category, cart, addToCart }) {
       .then((res) => res.json())
       .then((data) =>
         setProducts(
-          data.products.filter((product) => product.category === category)
+          data.products
+            .reverse()
+            .filter((product) => product.category === category)
         )
       );
   }, [category]);
