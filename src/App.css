@@ -209,6 +209,15 @@ footer nav {
   align-items: center;
 }
 
+footer svg {
+  color: #fff;
+  cursor: pointer;
+}
+
+footer svg:hover {
+  color: var(--orange);
+}
+
 /* Content area */
 
 .outlet {
