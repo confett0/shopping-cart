@@ -346,20 +346,32 @@ section:not(.hero-area) {
 
 /* Shop page */
 
+.category-title {
+  background-color: #0E0E0E;
+  color: #fff;
+  padding: 5rem 0;
+  text-align: center;
+  width: 100vw;
+}
+
 .product-wrap {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
+  padding: 2rem 9rem;
 }
 
 .product-card {
-  width: 20rem;
+  align-items: center;
+  display: flex;
+  gap: 5rem;
+  width: 100%;
   padding: 2rem 0;
 }
 
 .product-card img {
-  width: 100%;
+  width: 33.75rem;
+}
+
+.product-card:nth-child(even) img {
+  order: 2;
 }
 
 .product-page {

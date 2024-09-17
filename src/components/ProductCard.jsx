@@ -1,14 +1,17 @@
 import { Link } from "react-router-dom";
 
-export default function ProductCard({item, addToCart }) {
-    return (
-        <div className="product-card">
-            <Link to={`${item.id}`} >
-                <img src={item.image} />
-                <h3>{item.name}</h3>
-                <p>${item.price}</p>
-            </Link>
-            <button onClick={() => addToCart(item)}>Add to cart</button>
-        </div>
-    )
+export default function ProductCard({ item }) {
+  return (
+    <div className="product-card">
+      <img src={item.image} />
+      <div className="product-card-details">
+        {item.new && <p className="overline">New product</p>}
+        <h2>{item.name}</h2>
+        <p>{item.description}</p>
+        <Link to={`${item.id}`}>
+          <button className="orange">See product</button>
+        </Link>
+      </div>
+    </div>
+  );
 }
