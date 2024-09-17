@@ -3,7 +3,7 @@ import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./components/Layout"
 import Home from "./pages/Home";
-import Shop from "./pages/Shop";
+import CategoryPage from "./pages/CategoryPage";
 import Cart from "./pages/Cart";
 import ProductPage from "./pages/ProductPage";
 
@@ -61,8 +61,16 @@ export default function App() {
         <Route path="/" element={<Layout totalItems={totalItemsInCart} />}>
           <Route index element={<Home />} />
           <Route
-            path="shop"
-            element={<Shop cart={cart} addToCart={addToCart} />}
+            path="shop/headphones"
+            element={<CategoryPage category="headphones" cart={cart} addToCart={addToCart} />}
+          />
+          <Route
+            path="shop/speakers"
+            element={<CategoryPage category="speakers" cart={cart} addToCart={addToCart} />}
+          />
+          <Route
+            path="shop/earphones"
+            element={<CategoryPage category="earphones" cart={cart} addToCart={addToCart} />}
           />
           <Route
             path="shop/:productId"

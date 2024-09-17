@@ -6,21 +6,20 @@ export default function Nav() {
       <NavLink to="/" className={({ isActive }) => (isActive ? "active" : "")}>
         Home
       </NavLink>
-      <NavLink to="shop">Shop</NavLink>
       <NavLink
-        to="headphones"
+        to="shop/headphones"
         className={({ isActive }) => (isActive ? "active" : "")}
       >
         Headphones
       </NavLink>
       <NavLink
-        to="speakers"
+        to="shop/speakers"
         className={({ isActive }) => (isActive ? "active" : "")}
       >
         Speakers
       </NavLink>
       <NavLink
-        to="earphones"
+        to="shop/earphones"
         className={({ isActive }) => (isActive ? "active" : "")}
       >
         Earphones
