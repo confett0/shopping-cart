@@ -31,7 +31,7 @@ export default function ProductPage({
   </ul>);
 
   return (
-    <div className="product-page">
+    <div className="content-wrap product-page">
       <img src={productData.image} />
       <div className="product-info">
         <h2>{productData.name}</h2>

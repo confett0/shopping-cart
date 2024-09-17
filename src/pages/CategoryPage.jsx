@@ -23,9 +23,11 @@ export default function CategoryPage({ category, cart, addToCart }) {
   ));
 
   return (
-    <div className="category-page">
+    <>
       <h2 className="category-title">{category}</h2>
-      <div className="product-wrap">{productElements}</div>
-    </div>
+      <div className="content-wrap">
+        <div className="product-wrap">{productElements}</div>
+      </div>
+    </>
   );
 }

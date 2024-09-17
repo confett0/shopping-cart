@@ -224,17 +224,14 @@ footer svg:hover {
 
 /* Content area */
 
-.outlet {
+.content-wrap {
   display: flex;
   flex-direction: column;
   gap: 2rem;
   align-items: center;
-  max-width: 1440px;
   margin-bottom: 4rem;
-}
-
-section:not(.hero-area) {
-  max-width: 70rem;
+  max-width: 1440px;
+  padding: 2rem 9rem;
 }
 
 /* Home page */
@@ -352,10 +349,6 @@ section:not(.hero-area) {
   padding: 5rem 0;
   text-align: center;
   width: 100vw;
-}
-
-.product-wrap {
-  padding: 2rem 9rem;
 }
 
 .product-card {
