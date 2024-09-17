@@ -152,6 +152,7 @@ footer {
   gap: 3rem 5rem;
   padding: 3rem 9rem;
   max-width: 1440px;
+  position: relative;
 }
 
 header a,
@@ -162,6 +163,15 @@ footer a {
   letter-spacing: 2px;
   text-decoration: none;
   text-transform: uppercase;
+}
+
+.footer-wrap::before {
+  background-color: var(--orange);
+  content: "";
+  width: 6.3rem;
+  height: 0.25rem;
+  position: absolute;
+  left: 9rem;
 }
 
 footer p {
@@ -280,7 +290,8 @@ section:not(.hero-area) {
   justify-content: space-between;
 }
 
-.black-area>*, .before-footer>* {
+.black-area>*,
+.before-footer>* {
   border-radius: 0.5rem;
 }
 
