@@ -1,16 +1,11 @@
-import { NavLink } from "react-router-dom";
+import Nav from "./Nav";
 
 export default function Footer() {
   return (
     <footer>
       <div className="footer-wrap">
         <img src="../src/assets/shared/desktop/logo.svg" />
-        <nav>
-          <NavLink to="/">Home</NavLink>
-          <NavLink to="">Headphones</NavLink>
-          <NavLink to="">Speakers</NavLink>
-          <NavLink to="">Earphones</NavLink>
-        </nav>
+        <Nav />
         <p>
           Audiophile is an all in one stop to fulfill your audio needs. We're a
           small team of music lovers and sound specialists who are devoted to
