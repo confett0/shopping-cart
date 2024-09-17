@@ -158,6 +158,10 @@ nav {
   gap: 2rem;
 }
 
+.active {
+  color: var(--orange)
+}
+
 footer {
   background-color: #131313;
 }
