@@ -232,20 +232,26 @@ footer svg:hover {
 
 /* Content area */
 
+.shop-wrap {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 4rem;
+  max-width: 1440px;
+}
+
 .content-wrap {
+  align-items: center;
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  align-items: center;
-  margin-bottom: 4rem;
-  max-width: 1440px;
   padding: 2rem 9rem;
 }
 
 /* Home page */
 
 .hero-area {
-  background: radial-gradient(transparent, #0E0E0E 75%), url("./src/assets/home/desktop/image-hero.jpg") center/cover;
+  background: radial-gradient(transparent, #0E0E0E 75%), url("../src/assets/home/desktop/image-hero.jpg") center/cover;
   color: #fff;
   display: flex;
   align-items: center;
@@ -343,6 +349,7 @@ footer svg:hover {
 .before-footer {
   gap: 7rem;
   margin: 5rem 0 6rem;
+  max-width: 70rem;
 }
 
 .before-footer p {

@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import CategoryPage from "./pages/CategoryPage";
 import Cart from "./pages/Cart";
 import ProductPage from "./pages/ProductPage";
+import Shop from "./pages/Shop";
 
 export default function App() {
   const [cart, setCart] = useState([]);
@@ -60,31 +61,33 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Layout totalItems={totalItemsInCart} />}>
           <Route index element={<Home />} />
-          <Route
-            path="shop/headphones"
-            element={<CategoryPage category="headphones" cart={cart} addToCart={addToCart} />}
-          />
-          <Route
-            path="shop/speakers"
-            element={<CategoryPage category="speakers" cart={cart} addToCart={addToCart} />}
-          />
-          <Route
-            path="shop/earphones"
-            element={<CategoryPage category="earphones" cart={cart} addToCart={addToCart} />}
-          />
-          <Route
-            path="shop/:productSlug"
-            element={
-              <ProductPage
-                cart={cart}
-                addToCart={addToCart}
-                itemQuantity={itemQuantity}
-                setItemQuantity={setItemQuantity}
-                incrementQuantity={incrementItemQuantity}
-                decrementQuantity={decrementItemQuantity}
-              />
-            }
-          />
+          <Route path="shop" element={<Shop />}>
+            <Route
+              path="headphones"
+              element={<CategoryPage category="headphones" cart={cart} addToCart={addToCart} />}
+            />
+            <Route
+              path="speakers"
+              element={<CategoryPage category="speakers" cart={cart} addToCart={addToCart} />}
+            />
+            <Route
+              path="earphones"
+              element={<CategoryPage category="earphones" cart={cart} addToCart={addToCart} />}
+            />
+            <Route
+              path=":productSlug"
+              element={
+                <ProductPage
+                  cart={cart}
+                  addToCart={addToCart}
+                  itemQuantity={itemQuantity}
+                  setItemQuantity={setItemQuantity}
+                  incrementQuantity={incrementItemQuantity}
+                  decrementQuantity={decrementItemQuantity}
+                />
+              }
+            />
+          </Route>
           <Route
             path="cart"
             element={<Cart cart={cart} deleteItem={deleteFromCart} />}

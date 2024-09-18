@@ -14,7 +14,7 @@ export default function BeforeFooterArea() {
           best place to buy your portable audio equipment.
         </p>
       </div>
-      <img src="./src/assets/shared/desktop/image-best-gear.jpg" />
+      <img src="../src/assets/shared/desktop/image-best-gear.jpg" />
     </section>
   );
 }
