@@ -5,13 +5,11 @@ export default function CategoryPage({ category, cart, addToCart }) {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    fetch("/products.json")
+    fetch("/data.json")
       .then((res) => res.json())
       .then((data) =>
         setProducts(
-          data.products
-            .reverse()
-            .filter((product) => product.category === category)
+          data.reverse().filter((product) => product.category === category)
         )
       );
   }, [category]);

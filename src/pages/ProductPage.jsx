@@ -13,12 +13,12 @@ export default function ProductPage({
   const [productData, setProductData] = useState(null);
 
   useEffect(() => {
-    fetch("/products.json")
+    fetch("/data.json")
       .then((res) => res.json())
-      .then((data) =>
-        setProductData(data.products.find((product) => product.slug == productSlug))
+      .then((data) => 
+        setProductData(data.find((product) => product.slug === productSlug))
       );
-  }, [productSlug]);
+  }, [productSlug]); 
 
   console.log(productData)
 
@@ -26,13 +26,13 @@ export default function ProductPage({
     return <div>Loading...</div>;
   }
 
-  const includedItemElements = productData.includedItems.map(item => <ul key={item.item}>
+  const includedItemElements = productData.includes.map(item => <ul key={item.item}>
     <li><span className="orange-text">{item.quantity}x</span> {item.item}</li>
   </ul>);
 
   return (
     <div className="content-wrap product-page">
-      <img src={productData.image} />
+      <img src={productData.image.desktop} />
       <div className="product-info">
       {productData.new && <p className="overline orange-text">New product</p>}
         <h2>{productData.name}</h2>
