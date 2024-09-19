@@ -72,6 +72,11 @@ export default function ProductPage({
         <h3>Included items</h3>
         {includedItemElements}
       </div>
+      <div className="product-gallery">
+          <img className="first" src={productData.gallery.first.desktop} />
+          <img className="second" src={productData.gallery.second.desktop} />
+        <img className="third" src={productData.gallery.third.desktop} />
+      </div>
     </div>
   );
 }

@@ -382,6 +382,8 @@ footer svg:hover {
   order: 2;
 }
 
+/* Product page */
+
 .product-page {
   flex-direction: row;
   flex-wrap: wrap;
@@ -462,6 +464,30 @@ input[type=number]::-webkit-outer-spin-button {
 
 .quantity-button {
   padding: 0.8rem;
+}
+
+.product-gallery {
+  display: grid;
+  grid-template-columns: 28.4rem 40rem;
+  grid-template-rows: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.first {
+  grid-area: 1 / 1 / span 1 / span 1;
+}
+
+.second {
+  grid-area: 2 / 1 / span 1 / span 1;
+}
+
+.third {
+  grid-area: 1 / 2 / span 2 / span 1;
+}
+
+.product-gallery img {
+  border-radius: 0.5rem;
+  width: 100%;
 }
 
 .cart-item img {
