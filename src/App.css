@@ -48,13 +48,19 @@ h2 {
 h3 {
   font-size: 2rem;
   line-height: 2.25rem;
-  letter-spacing: 0.07144rem;
-  margin-bottom: 1.3rem;
+  letter-spacing: 0.07rem;
+  margin-bottom: 1.5rem;
 }
 
 h4 {
   font-size: 1.75rem;
   letter-spacing: 0.125rem;
+}
+
+h5 {
+  font-size: 1.5rem;
+  letter-spacing: 0.11rem;
+  margin-bottom: 1rem;
 }
 
 h6 {
@@ -64,7 +70,7 @@ h6 {
 
 p {
   color: #7d7d7d;
-  font-size: 0.9375rem;
+  font-size: 0.94rem;
   line-height: 1.5625rem;
   margin-bottom: 1rem;
 }
@@ -271,7 +277,7 @@ footer svg:hover {
 .category-links {
   display: flex;
   gap: 2rem;
-  padding: 6rem 0 0;
+  padding: 8rem 0 0;
 }
 
 .category-link {
@@ -314,6 +320,10 @@ footer svg:hover {
   height: 35rem;
   overflow: hidden;
   padding: 0 9rem;
+}
+
+.orange-area p {
+  color: #FFF;
 }
 
 .orange-area img {
@@ -487,6 +497,24 @@ input[type=number]::-webkit-outer-spin-button {
 
 .product-gallery img {
   border-radius: 0.5rem;
+  width: 100%;
+}
+
+.related-products {
+  text-align: center;
+}
+
+.related-products-wrap {
+  display: flex;
+  gap: 1.88rem;
+}
+
+.related-product-card {
+  width: 21.875rem;
+}
+
+.related-product-card img {
+  margin: 1.5rem 0;
   width: 100%;
 }
 

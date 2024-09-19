@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 export default function ProductPage({
   cart,
@@ -15,26 +15,30 @@ export default function ProductPage({
   useEffect(() => {
     fetch("/data.json")
       .then((res) => res.json())
-      .then((data) => 
+      .then((data) =>
         setProductData(data.find((product) => product.slug === productSlug))
       );
-  }, [productSlug]); 
+  }, [productSlug]);
 
-  console.log(productData)
+  console.log(productData);
 
   if (!productData) {
     return <div>Loading...</div>;
   }
 
-  const includedItemElements = productData.includes.map(item => <ul key={item.item}>
-    <li><span className="orange-text">{item.quantity}x</span> {item.item}</li>
-  </ul>);
+  const includedItemElements = productData.includes.map((item) => (
+    <ul key={item.item}>
+      <li>
+        <span className="orange-text">{item.quantity}x</span> {item.item}
+      </li>
+    </ul>
+  ));
 
   return (
     <div className="content-wrap product-page">
       <img src={productData.image.desktop} />
       <div className="product-info">
-      {productData.new && <p className="overline orange-text">New product</p>}
+        {productData.new && <p className="overline orange-text">New product</p>}
         <h2>{productData.name}</h2>
         <p>{productData.description}</p>
         <h6>$ {productData.price}</h6>
@@ -61,9 +65,11 @@ export default function ProductPage({
               +
             </button>
           </div>
-          <button className="orange" onClick={() => addToCart(productData)}>Add to cart</button>
-                </div>
+          <button className="orange" onClick={() => addToCart(productData)}>
+            Add to cart
+          </button>
         </div>
+      </div>
       <div className="product-features">
         <h3>Features</h3>
         <p>{productData.features}</p>
@@ -72,11 +78,23 @@ export default function ProductPage({
         <h3>Included items</h3>
         {includedItemElements}
       </div>
-      <div className="product-gallery">
-          <img className="first" src={productData.gallery.first.desktop} />
-          <img className="second" src={productData.gallery.second.desktop} />
+      <section className="product-gallery">
+        <img className="first" src={productData.gallery.first.desktop} />
+        <img className="second" src={productData.gallery.second.desktop} />
         <img className="third" src={productData.gallery.third.desktop} />
-      </div>
+      </section>
+      <section className="related-products">
+        <h3>You may also like</h3>
+        <div className="related-products-wrap">
+          {productData.others.map((product) => (
+            <div className="related-product-card" key={product.slug}>
+              <img src={product.image.desktop} />
+              <h5>{product.name}</h5>
+              <Link to={`/shop/${product.slug}`} ><button className="orange">See product</button></Link>
+            </div>
+          ))}
+        </div>
+      </section>
     </div>
   );
 }
