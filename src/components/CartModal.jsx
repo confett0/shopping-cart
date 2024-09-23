@@ -1,9 +1,10 @@
-export default function CartModal ({setIsModalOpen}) {
+import Cart from "./Cart";
+
+export default function CartModal ({setIsModalOpen, cart, deleteFromCart}) {
     return (
         <div onClick={() => setIsModalOpen(false)} className="modal-wrap">
             <div className="cart-modal">
-                <p>item 1</p>
-                <p>item 2</p>
+            <Cart cart={cart} deleteItem={deleteFromCart} />
             </div>
         </div>
     )

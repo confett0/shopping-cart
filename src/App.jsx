@@ -4,7 +4,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./components/Layout"
 import Home from "./pages/Home";
 import CategoryPage from "./pages/CategoryPage";
-import Cart from "./pages/Cart";
 import ProductPage from "./pages/ProductPage";
 import Shop from "./pages/Shop";
 
@@ -59,7 +58,7 @@ export default function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Layout totalItems={totalItemsInCart} />}>
+        <Route path="/" element={<Layout totalItems={totalItemsInCart} cart={cart} deleteItem={deleteFromCart} />}>
           <Route index element={<Home />} />
           <Route path="shop" element={<Shop />}>
             <Route
@@ -88,10 +87,6 @@ export default function App() {
               }
             />
           </Route>
-          <Route
-            path="cart"
-            element={<Cart cart={cart} deleteItem={deleteFromCart} />}
-          />
         </Route>
       </Routes>
     </BrowserRouter>
