@@ -155,6 +155,7 @@ header {
   background-color: #0E0E0E;
   color: #fff;
   padding: 0 9rem;
+  position: relative;
   width: 100vw;
 }
 
@@ -516,6 +517,34 @@ input[type=number]::-webkit-outer-spin-button {
 .related-product-card img {
   margin: 1.5rem 0;
   width: 100%;
+}
+
+/* Cart */
+
+.cart-icon {
+  cursor: pointer;
+}
+
+.cart-modal {
+  border-radius: 0.5rem;
+  background: #FFF;
+  padding: 1rem;
+  position: absolute;
+  top: 8rem;
+  right: 9rem;
+  width: 23.5rem;
+  z-index: 2;
+}
+
+.modal-wrap::after {
+  position: absolute;
+  top: 6rem;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  content: '';
+  height: 100vh;
 }
 
 .cart-item img {

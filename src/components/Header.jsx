@@ -1,7 +1,11 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import Nav from "./Nav";
+import CartModal from "./CartModal";
 
 export default function Header({ totalItems }) {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const toggleModal = () => setIsModalOpen((prevState) => !prevState);
   return (
     <header>
       <div className="header-wrap">
@@ -9,11 +13,12 @@ export default function Header({ totalItems }) {
           <img src="../src/assets/shared/desktop/logo.svg" />
         </Link>
         <Nav />
-        <Link to="cart">
-          <img src="../src/assets/shared/desktop/icon-cart.svg" />{" "}
+        <div className="cart-icon" onClick={toggleModal}>
+          <img src="../src/assets/shared/desktop/icon-cart.svg" />
           <span className="total-items">{totalItems ? totalItems : ""}</span>
-        </Link>
+        </div>
       </div>
+      {isModalOpen && <CartModal setIsModalOpen={setIsModalOpen} />}
     </header>
   );
 }
