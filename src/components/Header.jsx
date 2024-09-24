@@ -6,7 +6,8 @@ import CartModal from "./CartModal";
 export default function Header({
   totalItems,
   cart,
-  deleteFromCart,
+  setItemQuantity,
+  incrementQuantity,
   emptyCart,
 }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -27,8 +28,8 @@ export default function Header({
         <CartModal
           setIsModalOpen={setIsModalOpen}
           cart={cart}
-          deleteItem={deleteFromCart}
           emptyCart={emptyCart}
+          setItemQuantity={setItemQuantity} incrementQuantity={incrementQuantity}
         />
       )}
     </header>

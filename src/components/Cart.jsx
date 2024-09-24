@@ -1,4 +1,6 @@
-export default function Cart({ cart, deleteItem, emptyCart }) {
+import ItemQuantitySelector from "./ItemQuantitySelector";
+
+export default function Cart({ cart, emptyCart, setItemQuantity, incrementQuantity }) {
   const orderTotal = cart.reduce((a, b) => a + (b.price * b.quantity), 0);
 
   const itemElements = cart.map((item) => (
@@ -8,8 +10,7 @@ export default function Cart({ cart, deleteItem, emptyCart }) {
         <p className="cart-item-name">{item.name}</p>
         <p>${item.price}</p>
       </div>
-      <p>Quantity: {item.quantity}</p>
-      {/*<button onClick={() => deleteItem(item)}>Delete</button>*/}
+      <ItemQuantitySelector itemQuantity={item.quantity} setItemQuantity={setItemQuantity} incrementQuantity={incrementQuantity} />
     </div>
   ));
 

@@ -3,13 +3,19 @@ import Cart from "./Cart";
 export default function CartModal({
   setIsModalOpen,
   cart,
-  deleteFromCart,
   emptyCart,
+  setItemQuantity,
+  incrementQuantity,
 }) {
   return (
-    <div onClick={() => setIsModalOpen(false)} className="modal-wrap">
+    <div className="modal-wrap" /*onClick={() => setIsModalOpen(false)}*/ >
       <div className="cart-modal">
-        <Cart cart={cart} deleteItem={deleteFromCart} emptyCart={emptyCart} />
+        <Cart
+          cart={cart}
+          setItemQuantity={setItemQuantity}
+          incrementQuantity={incrementQuantity}
+          emptyCart={emptyCart}
+        />
       </div>
     </div>
   );
