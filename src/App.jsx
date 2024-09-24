@@ -1,7 +1,7 @@
-import "./App.css"
+import "./App.css";
 import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Layout from "./components/Layout"
+import Layout from "./components/Layout";
 import Home from "./pages/Home";
 import CategoryPage from "./pages/CategoryPage";
 import ProductPage from "./pages/ProductPage";
@@ -46,6 +46,8 @@ export default function App() {
       prevCart.filter((item) => item.id !== itemToDelete.id)
     );
 
+  const emptyCart = () => setCart([]);
+
   const incrementItemQuantity = () =>
     setItemQuantity((prevCount) => prevCount + 1);
 
@@ -58,20 +60,48 @@ export default function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Layout totalItems={totalItemsInCart} cart={cart} deleteItem={deleteFromCart} />}>
+        <Route
+          path="/"
+          element={
+            <Layout
+              totalItems={totalItemsInCart}
+              cart={cart}
+              emptyCart={emptyCart}
+              deleteItem={deleteFromCart}
+            />
+          }
+        >
           <Route index element={<Home />} />
           <Route path="shop" element={<Shop />}>
             <Route
               path="headphones"
-              element={<CategoryPage category="headphones" cart={cart} addToCart={addToCart} />}
+              element={
+                <CategoryPage
+                  category="headphones"
+                  cart={cart}
+                  addToCart={addToCart}
+                />
+              }
             />
             <Route
               path="speakers"
-              element={<CategoryPage category="speakers" cart={cart} addToCart={addToCart} />}
+              element={
+                <CategoryPage
+                  category="speakers"
+                  cart={cart}
+                  addToCart={addToCart}
+                />
+              }
             />
             <Route
               path="earphones"
-              element={<CategoryPage category="earphones" cart={cart} addToCart={addToCart} />}
+              element={
+                <CategoryPage
+                  category="earphones"
+                  cart={cart}
+                  addToCart={addToCart}
+                />
+              }
             />
             <Route
               path=":productSlug"

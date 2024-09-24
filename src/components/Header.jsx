@@ -3,7 +3,12 @@ import { Link } from "react-router-dom";
 import Nav from "./Nav";
 import CartModal from "./CartModal";
 
-export default function Header({ totalItems, cart, deleteFromCart }) {
+export default function Header({
+  totalItems,
+  cart,
+  deleteFromCart,
+  emptyCart,
+}) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const toggleModal = () => setIsModalOpen((prevState) => !prevState);
   return (
@@ -18,7 +23,14 @@ export default function Header({ totalItems, cart, deleteFromCart }) {
           <span className="total-items">{totalItems ? totalItems : ""}</span>
         </div>
       </div>
-      {isModalOpen && <CartModal setIsModalOpen={setIsModalOpen} cart={cart} deleteItem={deleteFromCart} />}
+      {isModalOpen && (
+        <CartModal
+          setIsModalOpen={setIsModalOpen}
+          cart={cart}
+          deleteItem={deleteFromCart}
+          emptyCart={emptyCart}
+        />
+      )}
     </header>
   );
 }

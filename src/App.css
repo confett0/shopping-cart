@@ -132,6 +132,7 @@ button.clear:hover {
 }
 
 button.minimal {
+  background: transparent;
   border: none;
   color: rgba(0, 0, 0, 0.5);
   position: relative;
@@ -549,6 +550,51 @@ input[type=number]::-webkit-outer-spin-button {
   height: 100vh;
 }
 
+.cart-header, .cart-total-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cart-header {
+  margin-bottom: 2rem;
+}
+
+.cart-header h6 {
+  margin-bottom: 0;
+}
+
+.empty-cart-button {
+  height: unset;
+  margin: 0;
+  text-transform: none;
+  width: unset;
+}
+
+.cart-item {
+  align-items: center;
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+}
+
 .cart-item img {
-  width: 5rem;
+  border-radius: 0.5rem;
+  width: 4rem;
+}
+
+.cart-item-name {
+  color: #000;
+  font-weight: 700;
+  margin-bottom: 0;
+  text-transform: uppercase;
+}
+
+.cart-total {
+  color: #000;
+  font-weight: 700;
+}
+
+.checkout-button {
+  width: 100%;
 }

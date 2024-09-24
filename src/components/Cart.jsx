@@ -1,12 +1,14 @@
-export default function Cart({ cart, deleteItem }) {
+export default function Cart({ cart, deleteItem, emptyCart }) {
   const orderTotal = cart.reduce((a, b) => a + (b.price * b.quantity), 0);
 
   const itemElements = cart.map((item) => (
     <div key={item.id} className="cart-item">
       <img src={item.image.mobile} />
-      <h4>{item.name}</h4>
+      <div>
+        <p className="cart-item-name">{item.name}</p>
+        <p>${item.price}</p>
+      </div>
       <p>Quantity: {item.quantity}</p>
-      <p>${item.price}</p>
       {/*<button onClick={() => deleteItem(item)}>Delete</button>*/}
     </div>
   ));
@@ -17,10 +19,15 @@ export default function Cart({ cart, deleteItem }) {
 
   return (
     <>
-      <h6>Cart ({cart.length})</h6>
+      <div className="cart-header">
+        <h6>Cart ({cart.length})</h6>
+        <button className="minimal empty-cart-button" onClick={emptyCart} >Remove all</button>
+      </div>
       {itemElements}
-      <p>Total: ${orderTotal}</p>
-      <button className="orange">Checkout</button>
+      <div className="cart-total-wrap">
+        <p>TOTAL</p><p className="cart-total">${orderTotal}</p>
+      </div>
+      <button className="orange checkout-button">Checkout</button>
     </>
   );
 }
