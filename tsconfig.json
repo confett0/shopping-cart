@@ -5,6 +5,7 @@
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "module": "ESNext",
     "skipLibCheck": true,
+    "types": ["vitest/globals"],
 
     // JSX Support
     "jsx": "react-jsx",
@@ -31,5 +32,5 @@
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true
   },
-  "include": ["src", "tests/App.test.tsx"]
+  "include": ["src", "tests/cartReducer.test.tsx"]
 }
