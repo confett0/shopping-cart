@@ -36,7 +36,10 @@ export default function Home() {
               srcSet="/assets/home/desktop/image-speaker-zx9.png 1280w"
               sizes="1280px"
             />
-            <img src="/assets/home/desktop/image-speaker-zx9.png" />
+            <img
+              src="/assets/home/desktop/image-speaker-zx9.png"
+              alt="ZX9 Speaker"
+            />
           </picture>
           <div className="home-product-card">
             <h1>ZX9 SPEAKER</h1>
