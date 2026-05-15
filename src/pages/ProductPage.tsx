@@ -1,7 +1,6 @@
 import { useState, useMemo } from "react";
 import { useLoaderData } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import { useProducts } from "../hooks/useProducts";
 import { useCart } from "../hooks/useCart";
 import { getProductPath } from "../utils";
 import QuantitySelector from "../components/QuantitySelector";
@@ -12,7 +11,6 @@ export default function ProductPage() {
   const productData = useLoaderData() as Product;
   const navigate = useNavigate();
   const { addItem, justAdded, setJustAdded } = useCart();
-  const products = useProducts();
   const [isAdding, setIsAdding] = useState(false);
   const [value, setValue] = useState("1");
   const numericValue = useMemo(() => {
@@ -129,7 +127,7 @@ export default function ProductPage() {
             <div className="related-product-card" key={product.slug}>
               <img src={product.image.desktop} alt={product.name} />
               <h5>{product.name}</h5>
-              <LinkButton to={getProductPath(product.slug, products)}>
+              <LinkButton to={getProductPath(product.slug)}>
                 See product
               </LinkButton>
             </div>

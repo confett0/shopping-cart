@@ -1,15 +1,15 @@
-import type { Product } from "./types/product";
+import products from "./data/data.json";
 
 const capitalize = (str: string) => {
   return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
 };
 
-const findProductBySlug = (slug: string, array: Product[]) => {
-  return array.find((product) => product.slug === slug);
+const findProductBySlug = (slug: string) => {
+  return products.find((product) => product.slug === slug);
 };
 
-const getProductPath = (slug: string, array: Product[]) => {
-  const product = findProductBySlug(slug, array);
+const getProductPath = (slug: string) => {
+  const product = findProductBySlug(slug);
   return `/shop/${product?.category}/${slug}`;
 };
 
