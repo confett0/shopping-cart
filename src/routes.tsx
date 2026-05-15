@@ -26,11 +26,18 @@ export const router = createBrowserRouter([
             path: ":category",
             element: <CategoryPage />,
             loader: ({ params }) => {
+              const { category } = params;
+              if (!category) {
+                throw new Response("Not Found", { status: 404 });
+              }
               const validCategories = ["speakers", "earphones", "headphones"];
               if (!validCategories.includes(params.category!)) {
                 throw new Response("Not Found", { status: 404 });
               }
-              return { category: params.category };
+              const categoryProducts = products.filter(
+                (product) => product.category === category,
+              );
+              return { category: category, categoryProducts: categoryProducts };
             },
           },
           {
