@@ -5,6 +5,7 @@
   --light-orange: #fbaf85;
   --font: "Manrope Variable", sans-serif;
   --transition: 300ms ease-in-out;
+  --subtle-lift: translateY(-2px);
 }
 
 /* Global Styles */
@@ -116,7 +117,7 @@ button {
 button.orange:hover,
 button.black:hover,
 button.clear:hover {
-  transform: translateY(-2px);
+  transform: var(--subtle-lift);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
@@ -168,7 +169,7 @@ button.minimal span {
 
 button.minimal:hover {
   color: var(--orange);
-  transform: translateY(-2px);
+  transform: var(--subtle-lift);
 }
 
 button:active {
@@ -320,6 +321,7 @@ footer svg {
 
 footer svg:hover {
   color: var(--orange);
+  transform: var(--subtle-lift);
 }
 
 /* Content area */
