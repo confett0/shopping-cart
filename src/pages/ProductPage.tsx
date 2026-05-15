@@ -25,13 +25,13 @@ export default function ProductPage() {
     setValue(input);
   };
 
-  const handleAddToCart = async (product: Product) => {
+  const handleAddToCart = async (product: Product, quantity: number) => {
     setIsAdding(true);
 
-    // simulate add to cart
+    // simulate add to cart delay for better UX feedback
     await new Promise((resolve) => setTimeout(resolve, 500));
 
-    addItem(product, numericValue);
+    addItem(product, quantity);
     setValue("1");
     setIsAdding(false);
     setJustAdded(true);
@@ -94,7 +94,7 @@ export default function ProductPage() {
             <button
               className={`orange add-to-cart-btn ${isAdding ? "loading" : ""}`}
               disabled={isAdding}
-              onClick={() => handleAddToCart(productData)}
+              onClick={() => handleAddToCart(productData, numericValue)}
             >
               {isAdding ? "" : justAdded ? "✓ Added!" : "Add to cart"}
             </button>
