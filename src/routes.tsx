@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import CategoryPage from "./pages/CategoryPage";
 import Shop from "./pages/Shop";
 import ErrorPage from "./pages/ErrorPage";
+import products from "./data/data.json";
 
 export const router = createBrowserRouter([
   {
@@ -33,8 +34,21 @@ export const router = createBrowserRouter([
             },
           },
           {
-            path: ":category/:productSlug",
+            path: ":category/:slug",
             element: <ProductPage />,
+            loader: ({ params }) => {
+              const { slug, category } = params;
+              if (!slug || !category) {
+                throw new Response("Not Found", { status: 404 });
+              }
+              const product = products.find(
+                (p) => p.slug === slug && p.category === category,
+              );
+              if (!product) {
+                throw new Response("Not Found", { status: 404 });
+              }
+              return product;
+            },
           },
         ],
       },

@@ -1,15 +1,15 @@
 import { useState, useMemo } from "react";
-import { useParams } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { useProducts } from "../hooks/useProducts";
 import { useCart } from "../hooks/useCart";
-import { findProductBySlug, getProductPath } from "../utils";
+import { getProductPath } from "../utils";
 import QuantitySelector from "../components/QuantitySelector";
 import LinkButton from "../components/LinkButton";
 import type { Product } from "../types/product";
 
 export default function ProductPage() {
-  const { productSlug } = useParams();
+  const productData = useLoaderData() as Product;
   const navigate = useNavigate();
   const { addItem, justAdded, setJustAdded } = useCart();
   const products = useProducts();
@@ -19,10 +19,6 @@ export default function ProductPage() {
     const num = Number(value);
     return isNaN(num) || num < 1 ? 1 : num;
   }, [value]);
-
-  if (!productSlug) {
-    throw new Response("Not found", { status: 404 });
-  }
 
   const handleQuantityChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const input = e.target.value;
@@ -47,12 +43,6 @@ export default function ProductPage() {
   const increment = () => setValue(String(numericValue + 1));
   const decrement = () =>
     setValue(numericValue <= 1 ? "1" : String(numericValue - 1));
-
-  const productData = findProductBySlug(productSlug, products);
-
-  if (!productData) {
-    throw new Response("Not found", { status: 404 });
-  }
 
   const includedItemElements = productData.includes.map((item) => (
     <li key={item.item}>
