@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { useProducts } from "../hooks/useProducts";
 import { useCart } from "../hooks/useCart";
+import { findProductBySlug, getProductPath } from "../utils";
 import QuantitySelector from "../components/QuantitySelector";
 import LinkButton from "../components/LinkButton";
 import type { Product } from "../types/product";
@@ -12,13 +13,16 @@ export default function ProductPage() {
   const navigate = useNavigate();
   const { addItem, justAdded, setJustAdded } = useCart();
   const products = useProducts();
-  const productData = products.find((product) => product.slug === productSlug);
   const [isAdding, setIsAdding] = useState(false);
   const [value, setValue] = useState("1");
   const numericValue = useMemo(() => {
     const num = Number(value);
     return isNaN(num) || num < 1 ? 1 : num;
   }, [value]);
+
+  if (!productSlug) {
+    throw new Response("Not found", { status: 404 });
+  }
 
   const handleQuantityChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const input = e.target.value;
@@ -44,11 +48,13 @@ export default function ProductPage() {
   const decrement = () =>
     setValue(numericValue <= 1 ? "1" : String(numericValue - 1));
 
+  const productData = findProductBySlug(productSlug, products);
+
   if (!productData) {
-    return <div>Loading...</div>;
+    throw new Response("Not found", { status: 404 });
   }
 
-  const includedItemElements = productData?.includes.map((item) => (
+  const includedItemElements = productData.includes.map((item) => (
     <li key={item.item}>
       <span className="orange-text">{item.quantity}x</span> {item.item}
     </li>
@@ -133,7 +139,7 @@ export default function ProductPage() {
             <div className="related-product-card" key={product.slug}>
               <img src={product.image.desktop} alt={product.name} />
               <h5>{product.name}</h5>
-              <LinkButton to={`/shop/${productData.category}/${product.slug}`}>
+              <LinkButton to={getProductPath(product.slug, products)}>
                 See product
               </LinkButton>
             </div>
