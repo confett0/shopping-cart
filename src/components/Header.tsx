@@ -38,7 +38,11 @@ export default function Header() {
             aria-hidden="true"
           />
           {cart.length > 0 && (
-            <div className="total-items" aria-live="polite">
+            <div
+              className="total-items"
+              aria-label="Cart items count"
+              aria-live="polite"
+            >
               {totalItemsInCart ? totalItemsInCart : ""}
             </div>
           )}

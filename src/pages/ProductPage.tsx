@@ -88,6 +88,7 @@ export default function ProductPage() {
             <button
               className={`orange add-to-cart-btn ${isAdding ? "loading" : ""}`}
               disabled={isAdding}
+              aria-label="Add to cart"
               onClick={() => handleAddToCart(productData, numericValue)}
             >
               {isAdding ? "" : justAdded ? "✓ Added!" : "Add to cart"}
