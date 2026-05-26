@@ -1,6 +1,6 @@
 import { it, expect } from "vitest";
-import cartReducer from "../src/cartReducer";
-import type { CartItem } from "../src/types/cart";
+import cartReducer from "../cartReducer";
+import type { CartItem } from "../types/cart";
 
 const mockProduct = {
   id: 1,

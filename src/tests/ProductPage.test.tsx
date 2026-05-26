@@ -1,10 +1,10 @@
-import { describe, it, expect } from "vitest";
+import { it, expect } from "vitest";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { createMemoryRouter, RouterProvider } from "react-router-dom";
-import ProductPage from "../src/pages/ProductPage";
-import Header from "../src/components/Header";
-import { CartProvider } from "../src/context/CartContext";
+import ProductPage from "../pages/ProductPage";
+import Header from "../components/Header";
+import { CartProvider } from "../context/CartContext";
 
 const mockProduct = {
   id: 1,
