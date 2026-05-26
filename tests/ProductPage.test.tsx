@@ -38,36 +38,59 @@ function TestLayout() {
   );
 }
 
-describe("Product page component", () => {
-  it("updates cart icon count after user click", async () => {
-    const user = userEvent.setup();
-    const router = createMemoryRouter(
-      [
-        {
-          path: "/",
-          element: <TestLayout />,
-          loader: () => mockProduct,
-        },
-      ],
+async function renderProductPage() {
+  const user = userEvent.setup();
+
+  const router = createMemoryRouter(
+    [
       {
-        initialEntries: ["/"],
+        path: "/",
+        element: <TestLayout />,
+        loader: () => mockProduct,
       },
-    );
+    ],
+    {
+      initialEntries: ["/"],
+    },
+  );
 
-    render(
-      <CartProvider>
-        <RouterProvider router={router} />
-      </CartProvider>,
-    );
+  render(
+    <CartProvider>
+      <RouterProvider router={router} />
+    </CartProvider>,
+  );
 
-    const button = await screen.findByRole("button", {
-      name: /add to cart/i,
-    });
+  return { user };
+}
 
-    await user.click(button);
+it("updates cart count after click", async () => {
+  const { user } = await renderProductPage();
 
-    const cartCount = await screen.findByLabelText("Cart items count");
-
-    expect(cartCount).toHaveTextContent("1");
+  const addToCartBtn = await screen.findByRole("button", {
+    name: /add to cart/i,
   });
+
+  await user.click(addToCartBtn);
+
+  const cartCount = await screen.findByLabelText("Cart items count");
+
+  expect(cartCount).toHaveTextContent("1");
+});
+
+it("updates cart modal after click", async () => {
+  const { user } = await renderProductPage();
+
+  const addToCartBtn = await screen.findByRole("button", {
+    name: /add to cart/i,
+  });
+
+  await user.click(addToCartBtn);
+
+  const cartIconBtn = await screen.findByRole("button", {
+    name: /shopping cart with \d+ items/i,
+  });
+
+  await user.click(cartIconBtn);
+
+  expect(screen.getByText(mockProduct.name)).toBeInTheDocument();
 });
