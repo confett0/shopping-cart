@@ -20,7 +20,7 @@ export default function ErrorPage() {
 
   return (
     <Layout>
-      <h1>{title}</h1>
+      <h1 className="error-page-title">{title}</h1>
       <p>{message}</p>
       <LinkButton to="/">Go Home</LinkButton>
       <CategoryLinks />

@@ -858,6 +858,14 @@ input[type="radio"] {
   width: 100%;
 }
 
+/* Error page */
+
+.error-page-title {
+  margin-top: 3rem;
+}
+
+/* Responsive design */
+
 @media screen and (max-width: 1150px) {
   .content-wrap,
   .shop-wrap,
