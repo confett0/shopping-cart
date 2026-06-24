@@ -40,7 +40,7 @@ export default function ResponsiveNav() {
         aria-expanded={showMobileNav}
         aria-controls="mobile-nav"
       >
-        <img src="/assets/shared/tablet/icon-hamburger.svg" />
+        <img src="/assets/shared/tablet/icon-hamburger.svg" alt="" />
       </button>
       <MenuLinks />
       {showMobileNav && (
