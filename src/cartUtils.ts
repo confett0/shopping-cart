@@ -10,7 +10,7 @@ export function getCartTotal(cart: CartItem[]) {
   );
 
   const vat = Math.round(orderTotal * VAT_RATE);
-  const grandTotal = orderTotal + SHIPPING;
+  const grandTotal = orderTotal + vat + SHIPPING;
 
   const totalItemsInCart = cart.reduce(
     (a: number, b: CartItem) => a + b.quantity,
