@@ -11,3 +11,8 @@ declare module "*.json" {
 declare module "*.jpg";
 declare module "*.png";
 declare module "*.svg";
+
+// Fonts
+
+declare module "@fontsource/*" {}
+declare module "@fontsource-variable/*" {}

@@ -5,7 +5,7 @@ import { useCart } from "../hooks/useCart";
 import { getProductPath } from "../utils";
 import QuantitySelector from "../components/QuantitySelector";
 import LinkButton from "../components/LinkButton";
-import type { Product } from "../types/product";
+import type { Product } from "../@types/product";
 
 export default function ProductPage() {
   const productData = useLoaderData() as Product;

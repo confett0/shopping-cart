@@ -1,6 +1,6 @@
 import LinkButton from "./LinkButton";
 import styles from "./ProductCard.module.css";
-import type { Product } from "../types/product";
+import type { Product } from "../@types/product";
 
 export default function ProductCard({ item }: { item: Product }) {
   return (

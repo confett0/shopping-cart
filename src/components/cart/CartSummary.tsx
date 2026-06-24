@@ -2,7 +2,7 @@ import { useCart } from "../../hooks/useCart";
 import CartItemRow from "./CartItemRow";
 import styles from "./Cart.module.css";
 import CartTotal from "./CartTotal";
-import type { CartItem } from "../../types/cart";
+import type { CartItem } from "../../@types/cart";
 
 export default function CartSummary() {
   const { cart } = useCart();

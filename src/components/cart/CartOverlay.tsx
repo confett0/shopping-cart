@@ -4,7 +4,7 @@ import CartItemRow from "./CartItemRow";
 import CartTotal from "./CartTotal";
 import { useCart } from "../../hooks/useCart";
 import styles from "./Cart.module.css";
-import type { CartItem } from "../../types/cart";
+import type { CartItem } from "../../@types/cart";
 
 export default function CartOverlay({
   closeModal,

@@ -1,6 +1,6 @@
 import ProductCard from "../components/ProductCard";
 import { useLoaderData } from "react-router-dom";
-import type { CategoryLoaderData } from "../types/product";
+import type { CategoryLoaderData } from "../@types/product";
 
 export default function CategoryPage() {
   const { categoryProducts, category } = useLoaderData() as CategoryLoaderData;
